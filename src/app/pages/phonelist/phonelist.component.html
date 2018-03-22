@@ -1,0 +1,9 @@
+<h1> Phone list </h1>
+<div>
+  <div *ngFor="let phone of phones">
+    <img class='img' [src]="phone.image" />
+    <h3> {{ phone.model }} </h3>
+    <p> {{ phone.brand }} </p>
+    <a [routerLink]="['phones', phone._id]">Ver Modelo</a>
+  </div>
+</div>

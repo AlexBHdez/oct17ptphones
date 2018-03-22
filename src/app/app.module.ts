@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from "@angular/router";
+import { routes } from "./app.routing";
+import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './app.component';
-
+import { PhonelistComponent } from './pages/phonelist/phonelist.component';
+import { PhoneApiService } from "./services/phone-api.service";
+import { PhoneDetailComponent } from './pages/phone-detail/phone-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PhonelistComponent,
+    PhoneDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [PhoneApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
